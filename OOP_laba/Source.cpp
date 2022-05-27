@@ -29,7 +29,10 @@ int main()
 	Engineers eng("male", 19, "Sergey", false, 30);
 	eng.showPersonaInf();
 	eng.upQualification();
+	cout << endl;
 
+	Workers work("male", 25, "Ivan", false, 5);
+	work.showPersonaInf();
 
 	return 0;
 }

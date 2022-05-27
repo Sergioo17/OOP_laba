@@ -6,13 +6,12 @@ using namespace std;
 class Workers : public Staff //Рабочие
 {
 private:
-	bool isWorking;
+	string Status;
 public:
 	Workers();
-	void ShowStatus();
-	void MakeWork();
-	void GoRelax();
-	void GoRelax(int time);
-	void GoRelax(string place);
+	Workers(string gender, int age, string name, bool education, unsigned int qualification);
+	void changeStatus();
+	void showPersonaInf();
+	
 };
 
