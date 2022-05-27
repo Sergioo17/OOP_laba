@@ -1,72 +1,58 @@
 #include "Staff.h"
-
-void Staff::CheckLevel()
-{
-	if (exp > 500)
-	{
-		LevelOfStaff += exp / 500;
-		cout << "Работник повышен на " << exp / 500 << " уровень" << endl;
-		exp = exp % 500;
-	}
-}
+using namespace std;
 
 Staff::Staff()
-{
-	cout << "Рабочий создан" << endl;
-	cout << "Уровень рабочего: " << 0 << endl;
-	StaffType = 'w';
-	StaffCreated = true;
-	LevelOfStaff = 0;
-	exp = 0;
+{	
+	this->gender = "male";
+	this->age = 18;
+	this->name = "Noname";
+	hasHigherEducation = false;
+	cout << "Безымянный создан" << endl;	
 }
 
-Staff::Staff(char typeOfStaff)
-{
-	if (typeOfStaff == 'w')
-	{
-		cout << "Рабочий создан" << endl;
-		cout << "Уровень рабочего: " << 0 << endl;
-		StaffType = typeOfStaff;
-		StaffCreated = true;
-		LevelOfStaff = 0;
-		exp = 0;
-	}
-	else if (typeOfStaff == 'e')
-	{
-		cout << "Инженер создан" << endl;
-		cout << "Уровень инженера: " << 0 << endl;
-		StaffType = typeOfStaff;
-		StaffCreated = true;
-		LevelOfStaff = 0;
-		exp = 0;
-	}
-	else cout << "Нет таких работников";
-}
-
-void Staff::ShowLevelOfStaff()
-{
-	if (StaffType == 'w')
-		cout << "Уровень работника: " << LevelOfStaff << endl;
-	if (StaffType == 'e')
-		cout << "Уровень инженера: " << LevelOfStaff << endl;
-}
-
-
-
-void Staff::RemoveStaff()
-{
-	if (StaffCreated)
-		StaffCreated = false;
+Staff::Staff(string gender, int age, string name, bool education)
+{	
+	if (gender == "male" || gender == "female")
+		this->gender = gender;
 	else
-		cout << "Работника и так нет" << endl;
+	{
+		cout << "Есть только 2 пола!(male/female. по умолчанию выбрано male)";
+		gender = "male";
+	}
+	this->age = age;
+	this->name = name;
+	hasHigherEducation = education;
+	cout << "Человек " << name << " создан" << endl;
 }
 
-int Staff::AddExperience(int ExpToAdd)
+void Staff::showPersonaInf()
 {
-	exp += ExpToAdd;
-	cout << "Добавлено " << ExpToAdd << " опыта" << endl;
-	CheckLevel();
-	return 0;
+	cout << "Вывожу информацию о " << name << endl;
+	cout << "Возраст: " << age << endl;
+	cout << "Пол: " << gender << endl;
+	if (hasHigherEducation) cout << "Имеет высшее образование" << endl;
+	else cout << "Не имеет высшего образования" << endl;
 }
+
+string Staff::GetName()
+{
+	return name;
+}
+
+string Staff::GetGenger()
+{
+	return gender;
+}
+
+int Staff::getAge()
+{
+	return age;
+}
+
+bool Staff::HasEducation()
+{
+	return hasHigherEducation;
+}
+
 
 
