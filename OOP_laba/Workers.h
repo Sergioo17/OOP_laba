@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Staff.h"
 using namespace std;
+
 class Workers : public Staff //Рабочие
 {
 private:

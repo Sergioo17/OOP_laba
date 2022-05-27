@@ -1,7 +1,6 @@
 #pragma once
-#include "Administration.h"
 using namespace std;
-class Staff : public Administration //кадры
+class Staff
 {
 private:
 	bool StaffCreated;

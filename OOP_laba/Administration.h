@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
+#include "Staff.h"
 using namespace std;
-class Administration //Администрация
+
+class Administration : public Staff
 {
 private:
 	int NumberOfDocuments;
