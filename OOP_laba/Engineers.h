@@ -5,12 +5,11 @@ using namespace std;
 class Engineers : public Staff //Инженеры
 {
 private:
-	bool isWorking;
-
+	string Status;
 public:
 	Engineers();
-	void ShowStatus();
-	void GoDevelop();
-	void GoRelax();
+	Engineers(string gender, int age, string name, bool education, unsigned int qualification);	
+	void changeStatus();
+	void showPersonaInf();
 };
 

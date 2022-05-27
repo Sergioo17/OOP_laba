@@ -2,43 +2,49 @@
 
 Engineers::Engineers()
 {
-	isWorking = false;
+	this->gender = "male";
+	this->age = 18;
+	this->name = "Noname";
+	hasHigherEducation = true;
+	cout << "это Безымянный инженер" << endl;
+	salary = 40000;
+	qualification = 1;
+	Status = "не работает";
 }
 
-void Engineers::ShowStatus()
+Engineers::Engineers(string gender, int age, string name, bool education, unsigned int qualification)
 {
-	if (isWorking)
-	{
-		cout << "Инженеры работают" << endl;
-	}
+	if (gender == "male" || gender == "female")
+		this->gender = gender;
 	else
 	{
-		cout << "Инженеры отдыхают" << endl;
+		cout << "Есть только 2 пола!(male/female. по умолчанию выбрано male)";
+		gender = "male";
 	}
+	this->age = age;
+	this->name = name;
+	hasHigherEducation = education;
+	cout << "это инженер " << name << endl;
+	salary = 60000 * (qualification * 0.5);
+	this->qualification = qualification;
+	Status = "не работает";
 }
 
-void Engineers::GoDevelop()
+void Engineers::changeStatus()
 {
-	if (isWorking)
-	{
-		cout << "Инженеры и так работают" << endl;
-	}
+	if (Status == "не работает")
+		Status = "работает";
 	else
-	{
-		isWorking = true;
-		cout << "Вы заставили инженеров работать" << endl;
-	}
+		Status = "работает";
 }
 
-void Engineers::GoRelax()
+void Engineers::showPersonaInf()
 {
-	if (isWorking)
-	{
-		isWorking = false;
-		cout << "Инженеры идут отдыхать" << endl;
-	}
-	else
-	{
-		cout << "Инженеры уже отдыхают!" << endl;
-	}
+	cout << "Вывожу информацию об инженере " << name << endl;
+	cout << "Возраст: " << age << endl;
+	cout << "Пол: " << gender << endl;
+	cout << "Квалификация: " << qualification << endl;
+	cout << "ЗП: " << salary << endl;
+	cout << "Статус: " << Status << endl;
 }
+

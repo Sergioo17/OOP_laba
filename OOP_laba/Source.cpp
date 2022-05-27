@@ -24,6 +24,11 @@ int main()
 	admin.changeSalary(1000);
 	admin.changeStatus();
 	admin.upQualification();
+	cout << endl;
+
+	Engineers eng("male", 19, "Sergey", false, 30);
+	eng.showPersonaInf();
+	eng.upQualification();
 
 
 	return 0;
