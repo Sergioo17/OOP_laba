@@ -9,9 +9,10 @@ Staff::Staff()
 	hasHigherEducation = false;
 	cout << "Безымянный создан" << endl;	
 	salary = 0;
+	qualification = 0;
 }
 
-Staff::Staff(string gender, int age, string name, bool education)
+Staff::Staff(string gender, int age, string name, bool education, unsigned int qualification)
 {	
 	if (gender == "male" || gender == "female")
 		this->gender = gender;
@@ -25,6 +26,7 @@ Staff::Staff(string gender, int age, string name, bool education)
 	hasHigherEducation = education;
 	cout << "Человек " << name << " создан" << endl;
 	salary = 0;
+	this->qualification = qualification;
 }
 
 void Staff::showPersonaInf()
@@ -34,6 +36,7 @@ void Staff::showPersonaInf()
 	cout << "Пол: " << gender << endl;
 	if (hasHigherEducation) cout << "Имеет высшее образование" << endl;
 	else cout << "Не имеет высшего образования" << endl;
+	cout << "Квалификация: " << qualification << endl;
 }
 
 string Staff::GetName()
@@ -68,6 +71,12 @@ void Staff::changeSalary(int number)
 		salary += number;
 		cout << "Вы подняли ЗП человеку на " << number << " рублей, теперь он получает " << salary << " руб/месяц" << endl;
 	}		
+}
+
+void Staff::upQualification()
+{
+	qualification++;
+	cout << "Квалификация " << name << " теперь = " << qualification<<endl;
 }
 
 

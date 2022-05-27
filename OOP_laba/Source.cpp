@@ -12,9 +12,10 @@ int main()
 
 	Staff staff1;
 	staff1.showPersonaInf();
+	staff1.upQualification();
 	cout << endl;
 
-	Staff staff2("female", 20, "Inna", true);
+	Staff staff2("female", 20, "Inna", true, 2);
 	staff2.showPersonaInf();
 	return 0;
 }
