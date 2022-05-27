@@ -17,5 +17,14 @@ int main()
 
 	Staff staff2("female", 20, "Inna", true, 2);
 	staff2.showPersonaInf();
+	cout << endl;
+
+	Administration admin("female", 24, "Valeria", true, 4);
+	admin.showPersonaInf();
+	admin.changeSalary(1000);
+	admin.changeStatus();
+	admin.upQualification();
+
+
 	return 0;
 }

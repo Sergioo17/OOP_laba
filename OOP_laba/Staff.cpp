@@ -7,7 +7,7 @@ Staff::Staff()
 	this->age = 18;
 	this->name = "Noname";
 	hasHigherEducation = false;
-	cout << "Безымянный создан" << endl;	
+	cout << "Человек создан!" << endl;	
 	salary = 0;
 	qualification = 0;
 }
@@ -64,12 +64,12 @@ void Staff::changeSalary(int number)
 	if (salary-number<0)
 	{
 		salary += number;
-		cout << "ЗП опущена ниже нуля, теперь человек платит вам " << salary << " руб/месяц" << endl;
+		cout << "ЗП опущена ниже нуля, теперь " << name << " платит вам " << salary << " руб/месяц" << endl;
 	}
 	else
 	{
 		salary += number;
-		cout << "Вы подняли ЗП человеку на " << number << " рублей, теперь он получает " << salary << " руб/месяц" << endl;
+		cout << "Вы подняли ЗП " <<name<<" на " << number << " рублей, теперь он получает " << salary << " руб / месяц" << endl;
 	}		
 }
 
