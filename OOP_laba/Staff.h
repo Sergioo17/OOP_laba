@@ -8,6 +8,7 @@ class Staff
 protected:
 	string gender;
 	int age;
+	int salary;
 	string name;
 	bool hasHigherEducation;
 public:
@@ -18,5 +19,6 @@ public:
 	string GetGenger();
 	int getAge();
 	bool HasEducation();
+	void changeSalary(int number);
 };
 

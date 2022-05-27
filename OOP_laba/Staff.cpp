@@ -8,6 +8,7 @@ Staff::Staff()
 	this->name = "Noname";
 	hasHigherEducation = false;
 	cout << "Безымянный создан" << endl;	
+	salary = 0;
 }
 
 Staff::Staff(string gender, int age, string name, bool education)
@@ -23,6 +24,7 @@ Staff::Staff(string gender, int age, string name, bool education)
 	this->name = name;
 	hasHigherEducation = education;
 	cout << "Человек " << name << " создан" << endl;
+	salary = 0;
 }
 
 void Staff::showPersonaInf()
@@ -52,6 +54,20 @@ int Staff::getAge()
 bool Staff::HasEducation()
 {
 	return hasHigherEducation;
+}
+
+void Staff::changeSalary(int number)
+{
+	if (salary-number<0)
+	{
+		salary += number;
+		cout << "ЗП опущена ниже нуля, теперь человек платит вам " << salary << " руб/месяц" << endl;
+	}
+	else
+	{
+		salary += number;
+		cout << "Вы подняли ЗП человеку на " << number << " рублей, теперь он получает " << salary << " руб/месяц" << endl;
+	}		
 }
 
 
